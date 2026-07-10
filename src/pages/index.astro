@@ -1,42 +1,37 @@
 ---
 import Base from "@/layouts/Base.astro";
 import Hero from "@/components/Hero.astro";
-import Statistics from "@/components/Statistics";
-import CallToAction from "@/partials/CallToAction.astro";
-import EssentialFeatures from "@/partials/EssentialFeatures.astro";
-import FAQ from "@/partials/FAQ";
-import Integration from "@/partials/Integration";
-import KeyFeatures from "@/partials/KeyFeatures.astro";
-import Pricing from "@/partials/Pricing";
-import Testimonials from "@/partials/Testimonials";
-import TrustedClients from "@/partials/TrustedClients";
-import WhyChooseUs from "@/partials/WhyChooseUs.astro";
+import KeyFeatures from "@/partials/KeyFeatures.astro"; // Map to "Features"
+import WhyChooseUs from "@/partials/WhyChooseUs.astro";  // Map to "About / Product"
+import CallToAction from "@/partials/CallToAction.astro"; // Map to "Contact"
 import { getListPage } from "@/lib/contentParser";
 
 const homepage = await getListPage("homepage/-index.md");
-const trusted_clients = await getListPage("sections/trusted-clients.md");
-const key_features = await getListPage("sections/key-features.md");
-const essential_features = await getListPage("sections/essential-features.md");
-const whyChooseUs = await getListPage("sections/why-choose-us.md");
-const integration = await getListPage("sections/integration.md");
-const pricing = await getListPage("sections/pricing.md");
-const testimonial = await getListPage("sections/testimonial.md");
-const faq = await getListPage("sections/faq.md");
-const callToAction = await getListPage("sections/call-to-action.md");
-const statistics = await getListPage("sections/statistics.md");
+const features = await getListPage("sections/key-features.md"); 
+const aboutProduct = await getListPage("sections/why-choose-us.md"); 
+const contact = await getListPage("sections/call-to-action.md"); 
+
 const { banner } = homepage.frontmatter;
 ---
 
 <Base>
-  <Hero data={banner} />
-  <TrustedClients data={trusted_clients} client:visible />
-  <KeyFeatures data={key_features} />
-  <Statistics data={statistics} client:visible />
-  <EssentialFeatures data={essential_features} />
-  <WhyChooseUs data={whyChooseUs} />
-  <Integration data={integration} client:visible />
-  <Pricing data={pricing} client:visible />
-  <Testimonials data={testimonial} client:visible />
-  <FAQ data={faq} client:visible />
-  <CallToAction data={callToAction} />
+  <!-- Hero Section: The Hook -->
+  <div id="home">
+    <Hero data={banner} />
+  </div>
+
+  <!-- Features Section: The Problem & The Shift to Physical AI -->
+  <div id="features">
+    <KeyFeatures data={features} />
+  </div>
+
+  <!-- About Section: The Solution & VoRTis Engine Capability -->
+  <div id="about">
+    <WhyChooseUs data={aboutProduct} />
+  </div>
+
+  <!-- Contact Section: Single CTA to Email / Register Pilot -->
+  <div id="contact">
+    <CallToAction data={contact} />
+  </div>
 </Base>
