@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Power AI - A Free AI SaaS Website Template built with Astro",
+    "title": "Simplex - The Physics Engine for Physical AI",
     "base_url": "https://simplexsim.com",
     "base_path": "/",
     "trailing_slash": false,
