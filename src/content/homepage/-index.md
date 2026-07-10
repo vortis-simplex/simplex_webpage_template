@@ -13,7 +13,7 @@ banner:
       - "/images/avatars/avatar-1.jpg"
       - "/images/avatars/avatar-2.jpg"
       - "/images/avatars/avatar-3.png"
-  image: "/images/banner.jpg"
+  image: "/images/banner.png"
   button_dark:
     enable: true
     label: "Explore Simplex"
