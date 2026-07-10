@@ -15,11 +15,11 @@ banner:
       - "/images/avatars/avatar-3.png"
   image: "/images/banner.png"
   button_dark:
-    enable: false
-    label: "GitHub Repository"
-    link: "https://github.com/sitepins/powerai-astro"
+    enable: true
+    label: "Explore Simplex"
+    link: "/about"
   button_primary:
-    enable: false
-    label: "Edit with Sitepins"
-    link: "https://app.sitepins.com/new/clone?name=PoweraiAstro&repository=https://github.com/sitepins/powerai-astro&aff=poweraiastro"
+    enable: true
+    label: "Get in Touch"
+    link: "/contact"
 ---
