@@ -4,8 +4,8 @@
     "base_url": "https://simplexsim.com",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
+    "favicon": "/images/favicon.svg",
+    "logo": "/images/logo.svg",
     "logo_width": "137",
     "logo_height": "46",
     "logo_text": "simplex"
