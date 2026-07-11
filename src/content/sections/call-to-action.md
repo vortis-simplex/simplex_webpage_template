@@ -1,9 +1,9 @@
 ---
 enable: true
-title: "Start building smarter solutions for your business"
-description: "Unlock the full potential of automation, insights, and productivity with PowerAI"
+title: "Accelerate Your Physical AI Architecture"
+description: "Get in touch to explore our real-time physical simulation data, integrate our solver engine, or register for our pilot program."
 button:
   enable: true
-  label: "Edit with Sitepins"
-  link: "https://app.sitepins.com/new/clone?name=PoweraiAstro&repository=https://github.com/sitepins/powerai-astro&aff=poweraiastro"
+  label: "Contact Us"
+  link: "mailto:contact@simplexsim.com"
 ---

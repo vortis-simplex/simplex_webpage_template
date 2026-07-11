@@ -1,6 +1,6 @@
 ---
 enable: true
-title: "Uncompromising Performance Across All Fronts"
+title: "Large-scale, Physically accurate, and Real-Time Simulation Solutions"
 badge: "Why Choose Us?"
 feature_list:
   - title: "Physically Accurate"
