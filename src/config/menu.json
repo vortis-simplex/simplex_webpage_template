@@ -2,33 +2,33 @@
   "main": [
     {
       "name": "Home",
-      "url": "/"
+      "url": "#home"
     },
     {
       "name": "About",
-      "url": "/about"
+      "url": "#features"
     },
     {
       "name": "Features",
-      "url": "/features"
+      "url": "#engineCapabilities"
     },
     {
       "name": "Contact",
-      "url": "/contact"
+      "url": "#contact"
     }
   ],
   "footer_company": [
     {
       "name": "Home",
-      "url": "/"
+      "url": "#home"
     },
     {
-      "name": "About Us",
-      "url": "/about"
+      "name": "About",
+      "url": "#features"
     },
     {
       "name": "Features",
-      "url": "/features"
+      "url": "#engineCapabilities"
     }
   ],
   "footer_resource": [
@@ -38,7 +38,7 @@
     },
     {
       "name": "Contact",
-      "url": "/contact"
+      "url": "#contact"
     }
   ],
   "footer_legal": [
