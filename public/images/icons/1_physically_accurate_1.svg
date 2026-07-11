@@ -1,0 +1,14 @@
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="grad" x1="3" y1="22" x2="41" y2="22" gradientUnits="userSpaceOnUse">
+<stop stop-color="#4DFEA0"/>
+<stop offset="1" stop-color="#059669"/>
+</linearGradient>
+</defs>
+<g transform="translate(22,22) scale(1.667) translate(-12,-12)" stroke="url(#grad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<circle cx="12" cy="12" r="1.4" fill="url(#grad)" stroke="none"/>
+<ellipse cx="12" cy="12" rx="10" ry="4.2"/>
+<ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/>
+<ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/>
+</g>
+</svg>
