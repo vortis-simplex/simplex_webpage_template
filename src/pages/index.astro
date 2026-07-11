@@ -1,6 +1,7 @@
 ---
 import Base from "@/layouts/Base.astro";
 import Hero from "@/components/Hero.astro";
+import EssentialFeatures from "@/partials/EssentialFeatures.astro";
 import KeyFeatures from "@/partials/KeyFeatures.astro"; // Map to "Features"
 import WhyChooseUs from "@/partials/WhyChooseUs.astro";  // Map to "About / Product"
 import CallToAction from "@/partials/CallToAction.astro"; // Map to "Contact"
@@ -11,6 +12,7 @@ const features = await getListPage("sections/key-features.md");
 const engineCapabilities = await getListPage("sections/engine-capabilities.md");
 const aboutProduct = await getListPage("sections/why-choose-us.md"); 
 const contact = await getListPage("sections/call-to-action.md"); 
+const essentialFeatures = await getListPage("sections/essential-features.md");
 
 const { banner } = homepage.frontmatter;
 ---
@@ -26,9 +28,9 @@ const { banner } = homepage.frontmatter;
     <KeyFeatures data={features} />
   </div>
 
-  <!-- Features Section: Engine Capabilities -->
-  <div id="features">
-    <KeyFeatures data={engineCapabilities} />
+  <!-- Essential Features Section: Engine Capabilities Section -->
+  <div id="engineCapabilities">
+    <EssentialFeatures data={essentialFeatures} />
   </div>
 
   <!-- About Section: Why Choose Us -->
