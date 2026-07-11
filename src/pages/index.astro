@@ -8,6 +8,7 @@ import { getListPage } from "@/lib/contentParser";
 
 const homepage = await getListPage("homepage/-index.md");
 const features = await getListPage("sections/key-features.md"); 
+const engineCapabilities = await getListPage("sections/engine-capabilities.md");
 const aboutProduct = await getListPage("sections/why-choose-us.md"); 
 const contact = await getListPage("sections/call-to-action.md"); 
 
@@ -25,7 +26,12 @@ const { banner } = homepage.frontmatter;
     <KeyFeatures data={features} />
   </div>
 
-  <!-- About Section: The Solution & VoRTis Engine Capability -->
+  <!-- Features Section: Engine Capabilities -->
+  <div id="features">
+    <KeyFeatures data={engineCapabilities} />
+  </div>
+
+  <!-- About Section: Why Choose Us -->
   <div id="about">
     <WhyChooseUs data={aboutProduct} />
   </div>
