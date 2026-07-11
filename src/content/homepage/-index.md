@@ -2,7 +2,7 @@
 # Banner
 banner:
   title: |
-    The Physics Engine
+    Simplex: The Physics Engine
     <br/>
     <mark>for Physical AI</mark>
   content: "Large-scale, physically accurate, and real-time simulation solutions"
@@ -17,9 +17,9 @@ banner:
   button_dark:
     enable: true
     label: "Explore Simplex"
-    link: "/about"
+    link: "#features"
   button_primary:
     enable: true
     label: "Get in Touch"
-    link: "/contact"
+    link: "#contact"
 ---

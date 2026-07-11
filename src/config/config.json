@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Simplex - Simplex: The Physics Engine for Physical AI",
+    "title": "Simplex - The Physics Engine for Physical AI",
     "base_url": "https://simplexsim.com",
     "base_path": "/",
     "trailing_slash": false,
@@ -25,7 +25,7 @@
     "newsletter_form_action": "#",
     "footer_text": "Bridge sim-to-real gaps with high-quality 3D data",
     "mail": "contact@simplexsim.com",
-    "phone": "/",
+    "phone": " ",
     "copyright": "© 2026 SimpleX. All rights reserved."
   },
 
