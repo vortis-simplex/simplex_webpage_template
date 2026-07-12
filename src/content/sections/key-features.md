@@ -9,14 +9,14 @@ track:
   link: "#contact"
 features:
   - title: "The Limit of AI-Based World Models"
-    track: "Physical AI"
-    content: "Generative video and world models (like Genie 3 or NVIDIA Cosmos) generate visually striking scenes but suffer from incorrect physics, resulting in 'ghost waves' or unrealistic item behaviors."
+    track: "AI-Based World Models"
+    content: "Generative video and world models generate visually striking scenes but suffer from incorrect physics, resulting in 'ghost waves' or unrealistic item behaviors."
     image: "/images/features/feature-1.png"
     bullet_points:
-      - "Inaccurate Fluid Behaviors"
-      - "Physical Simulation Failures"
+      - "Inaccurate Physical Behaviors"
+      - "Unrealistic scene"
   - title: "The Bottleneck of Traditional Simulators"
-    track: "Bridging the Sim-to-Real Gap"
+    track: "Traditional Simulators"
     content: "Scientific solvers provide physical accuracy but are completely bottlenecked by incomplete and slow computations, requiring hours per run instead of operating in true real-time."
     image: "/images/features/feature-2.png"
     bullet_points:
@@ -27,6 +27,6 @@ features:
     content: "Physical AI requires massive amounts of high-dimensional, accurate 3D physical data to train effectively without failing when deployed into actual physical reality."
     image: "/images/features/feature-3.png"
     bullet_points:
-      - "Massive 3D Training Datasets"
-      - "Reliable Real-World Deployment"
+      - "Accurate Physical Data"
+      - "Massive Datasets with Comprehensive Physics Properties"
 ---
