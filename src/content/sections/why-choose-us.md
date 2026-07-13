@@ -1,7 +1,7 @@
 ---
 enable: true
 title: "Large-scale, Physically accurate, and Real-Time Simulation Solutions"
-badge: "Why Choose Us?"
+badge: "Why Simplex"
 feature_list:
   - title: "Physically Accurate"
     icon: "/images/icons/1_physically_accurate_1.svg"
