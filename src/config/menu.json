@@ -5,12 +5,8 @@
       "url": "/#home"
     },
     {
-      "name": "Challenge",
+      "name": "Products",
       "url": "/#features"
-    },
-    {
-      "name": "Features",
-      "url": "/#engineCapabilities"
     },
     {
       "name": "Contact",
@@ -23,12 +19,8 @@
       "url": "/#home"
     },
     {
-      "name": "Challenge",
+      "name": "Products",
       "url": "/#features"
-    },
-    {
-      "name": "Features",
-      "url": "/#engineCapabilities"
     }
   ],
   "footer_resource": [
