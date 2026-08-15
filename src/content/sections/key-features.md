@@ -1,32 +1,33 @@
 ---
 enable: true
-title: "The Sim-to-Real Gaps"
-badge: "What We Solve"
+title: "Physics Engine"
+badge: "Close Sim-to-Real Gap"
 track:
   top_note: "Physical AI"
   title: "Bridging the Sim-to-Real Gap"
   bottom_note: "SimpleX Core Real-Time Engine"
   link: "#contact"
 features:
-  - title: "Inaccurate Physics"
-    track: "Inaccurate Physics"
+  - title: "Real-Time Interactive Simulator"
+    track: "Real-Time Interactive Simulator"
     content: ""
     image: "/images/features/feature-1.png"
     bullet_points:
-      - "Oversimplified physical modeling"
-      - "Missing essential dynamics"
-  - title: "Insufficient Real-World Data"
-    track: "Insufficient Real-World Data"
+      - "Physical Accuracy"
+      - "Real-Time Performance"
+      - "Interactive Simulation"
+  - title: "Seamless integration with SoTA simulators"
+    track: "Seamless integration with SoTA simulators"
     content: ""
     image: "/images/features/feature-2.png"
     bullet_points:
-      - "High cost of data collection"
-      - "Limited diversity & edge cases"
-  - title: "Slow Computation"
-    track: "Slow Computation"
+      - "Robot Training"
+      - "Complex Environments"
+  - title: "High Performance Computing"
+    track: "High Performance Computing"
     content: ""
     image: "/images/features/feature-3.png"
     bullet_points:
-      - "Expensive high-fidelity simulations"
-      - "Real-time inference constraints "
+      - "Physical Model Optimizations"
+      - "Software-Hardware Codesign"
 ---
