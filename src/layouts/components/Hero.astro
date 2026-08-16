@@ -102,7 +102,7 @@ const { data } = Astro.props;
   <!-- Hero Shape -->
   <div
     id="hero-shape"
-    class="absolute bottom-20 -z-1 left-1/2 -translate-x-1/2 pointer-events-none h-100 sm:h-150 lg:h-170 xl:h-210"
+    class="absolute bottom-20 -z-1 left-1/2 -translate-x-1/2 pointer-events-none h-100 sm:h-150 lg:h-170 xl:h-210 opacity-25"
   >
     <HeroShape />
   </div>
@@ -162,7 +162,7 @@ const { data } = Astro.props;
       heroShape.style.opacity = "0";
       animate(
         heroShape,
-        { opacity: [0, 1], transform: ["scale(0.8)", "scale(1)"] },
+        { opacity: [0, 0.25], transform: ["scale(0.8)", "scale(1)"] },
         { ...smooth, duration: 1.2, delay: 0.2 },
       );
     }
