@@ -1,0 +1,34 @@
+---
+import Base from "../../layouts/Base.astro";
+import { formatDate, getUpdates, isoDate, updateHref } from "../../lib/updates";
+
+const updates = await getUpdates();
+---
+
+<Base title="Updates" description="News and updates from Simplex.">
+  <section class="page-header container">
+    <p class="label">Updates</p>
+    <h1 class="display sm">News from Simplex.</h1>
+  </section>
+  <section class="section tight">
+    <div class="container">
+      {
+        updates.length === 0 ? (
+          <p class="lede" style="margin-top:0">Nothing here yet.</p>
+        ) : (
+          <ul class="updates">
+            {updates.map((u) => (
+              <li>
+                <time datetime={isoDate(u.data.date)}>{formatDate(u.data.date)}</time>
+                <div>
+                  <a href={updateHref(u)}>{u.data.title}</a>
+                  {u.data.summary && <p class="summary">{u.data.summary}</p>}
+                </div>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+  </section>
+</Base>

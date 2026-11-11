@@ -1,0 +1,28 @@
+---
+import site from "../config/site.json";
+import Wordmark from "./Wordmark.astro";
+
+const path = Astro.url.pathname;
+const isCurrent = (href: string) => href !== "/" && !href.startsWith("mailto:") && path.startsWith(href);
+---
+
+<header class="site-header">
+  <div class="container row">
+    <a class="brand" href="/" aria-label={`${site.name} home`}>
+      <Wordmark />
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        {
+          site.nav.map((item) => (
+            <li>
+              <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

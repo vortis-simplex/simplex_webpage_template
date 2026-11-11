@@ -1,0 +1,26 @@
+---
+import site from "../config/site.json";
+
+type Link = { label: string; href: string };
+const social = site.social as Link[];
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container row">
+    <p>© {year} {site.legal_name}. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+      {social.map((s) => (
+        <li>
+          <a href={s.href} rel="me noopener">{s.label}</a>
+        </li>
+      ))}
+      {site.footer_links.map((l) => (
+        <li>
+          <a href={l.href}>{l.label}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</footer>

@@ -1,78 +1,37 @@
-import mdx from "@astrojs/mdx";
-import react from "@astrojs/react";
-import sitemap from "@astrojs/sitemap";
-import tailwindcss from "@tailwindcss/vite";
-import AutoImport from "astro-auto-import";
 import { defineConfig, fontProviders } from "astro/config";
-import remarkCollapse from "remark-collapse";
-import remarkToc from "remark-toc";
-import sharp from "sharp";
-import config from "./src/config/config.json";
-import theme from "./src/config/theme.json";
+import sitemap from "@astrojs/sitemap";
+import site from "./src/config/site.json";
 
-// Helper to parse font string format: "FontName:wght@400;500;600;700"
-function parseFontString(fontStr) {
-  const [name, weightPart] = fontStr.split(":");
-  let weights = [400];
-
-  if (weightPart) {
-    const weightMatch = weightPart.match(/wght@?([\d;]+)/);
-    if (weightMatch) {
-      weights = weightMatch[1].split(";").map((w) => parseInt(w, 10));
-    }
-  }
-
-  const cleanName = name.replace(/\+/g, " ");
-  return { name: cleanName, weights };
-}
-
-// Build fonts configuration from theme.json
-const fontsConfig = Object.entries(theme.fonts.font_family)
-  .filter(([key]) => !key.includes("_type"))
-  .map(([key, fontStr]) => {
-    const { name, weights } = parseFontString(fontStr);
-    const typeKey = `${key}_type`;
-    const fallback = theme.fonts.font_family[typeKey] || "sans-serif";
-
-    return {
-      name,
-      cssVariable: `--font-${key}`,
-      provider: fontProviders.google(),
-      weights,
-      display: "swap",
-      fallbacks: [fallback],
-    };
-  });
-
-// https://astro.build/config
 export default defineConfig({
-  site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
-  base: config.site.base_path ? config.site.base_path : "/",
-  trailingSlash: config.site.trailing_slash ? "always" : "never",
-  image: { service: sharp() },
-  vite: {
-    plugins: [tailwindcss()],
-    server: { watch: { ignored: ["**/.claude/**"] } },
-  },
-  fonts: fontsConfig,
-  integrations: [
-    react(),
-    sitemap(),
-    AutoImport({
-      imports: [
-        "@/shortcodes/Button",
-        "@/shortcodes/Accordion",
-        "@/shortcodes/Notice",
-        "@/shortcodes/Video",
-        "@/shortcodes/Youtube",
-        "@/shortcodes/Tabs",
-        "@/shortcodes/Tab",
-      ],
-    }),
-    mdx(),
-  ],
+  site: site.url,
+  integrations: [sitemap()],
+  build: { inlineStylesheets: "always" },
   markdown: {
-    remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
-    shikiConfig: { theme: "one-dark-pro", wrap: true },
+    shikiConfig: { theme: "github-light" },
   },
+  // Fonts are downloaded once at build time and served from this site,
+  // so visitors never contact Google. To use system fonts instead, delete
+  // this block and the two <Font> tags in src/layouts/Base.astro.
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: "Instrument Sans",
+      cssVariable: "--font-sans",
+      weights: ["400 700"],
+      styles: ["normal"],
+      subsets: ["latin"],
+      fallbacks: ["system-ui", "Helvetica Neue", "Arial", "sans-serif"],
+      display: "swap",
+    },
+    {
+      provider: fontProviders.google(),
+      name: "Instrument Serif",
+      cssVariable: "--font-serif",
+      weights: [400],
+      styles: ["normal", "italic"],
+      subsets: ["latin"],
+      fallbacks: ["Georgia", "Times New Roman", "serif"],
+      display: "swap",
+    },
+  ],
 });

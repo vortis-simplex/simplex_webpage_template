@@ -1,0 +1,31 @@
+---
+/**
+ * The Simplex wordmark: a tetrahedron (a 3-simplex) drawn in the current
+ * text color with a teal node, followed by the name. `mark={false}` renders
+ * the name alone.
+ */
+interface Props {
+  mark?: boolean;
+}
+const { mark = true } = Astro.props;
+---
+
+{
+  mark && (
+    <svg
+      class="mark"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+    >
+      <path d="M12 2.8 21.4 20H2.6Z" />
+      <path d="M12 2.8v10.4M2.6 20l9.4-6.8M21.4 20 12 13.2" />
+      <circle cx="12" cy="13.2" r="2.1" fill="var(--accent)" stroke="none" />
+    </svg>
+  )
+}
+<span class="wordmark">simple<span class="x">x</span></span>

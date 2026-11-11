@@ -1,35 +1,111 @@
 ---
-import Base from "@/layouts/Base.astro";
-import Hero from "@/components/Hero.astro";
-import EssentialFeatures from "@/partials/EssentialFeatures.astro";
-import KeyFeatures from "@/partials/KeyFeatures.astro"; // Map to "Features"
-import WhyChooseUs from "@/partials/WhyChooseUs.astro";  // Map to "About / Product"
-import CallToAction from "@/partials/CallToAction.astro"; // Map to "Contact"
-import { getListPage } from "@/lib/contentParser";
+import { getEntry, render } from "astro:content";
+import { Image } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import site from "../config/site.json";
+import { formatDate, getUpdates, isoDate, updateHref } from "../lib/updates";
 
-const homepage = await getListPage("homepage/-index.md");
-const features = await getListPage("sections/key-features.md"); 
-const engineCapabilities = await getListPage("sections/engine-capabilities.md");
-const aboutProduct = await getListPage("sections/why-choose-us.md"); 
-const contact = await getListPage("sections/call-to-action.md"); 
-const essentialFeatures = await getListPage("sections/essential-features.md");
-
-const { banner } = homepage.frontmatter;
+const home = await getEntry("home", "home");
+if (!home) throw new Error("Missing src/content/home.md");
+const { data } = home;
+const { Content } = await render(home);
+const updates = (await getUpdates()).slice(0, 3);
 ---
 
-<Base>
-  <!-- Hero Section: The Hook -->
-  <div id="home">
-    <Hero data={banner} />
-  </div>
+<Base fullTitle title={site.title} description={site.description}>
+  <section class="hero container">
+    <h1 class="display">
+      {data.headline}
+      {data.headline_em && <em>{data.headline_em}</em>}
+    </h1>
+    {data.lede && <p class="lede">{data.lede}</p>}
+    {
+      data.cta && (
+        <a class="cta" href={data.cta.href}>
+          {data.cta.label} <span aria-hidden="true">→</span>
+        </a>
+      )
+    }
+  </section>
 
-  <!-- Features Section: The Problem & The Shift to Physical AI -->
-  <div id="features">
-    <KeyFeatures data={features} />
-  </div>
+  <section class="section">
+    <div class="container grid">
+      <h2 class="label num">What we build</h2>
+      <div class="statement"><Content /></div>
+    </div>
+  </section>
 
-  <!-- Contact Section: Single CTA to Email / Register Pilot -->
-  <div id="contact">
-    <CallToAction data={contact} />
-  </div>
+  {
+    data.pillars.length > 0 && (
+      <section class="section">
+        <div class="container grid">
+          <h2 class="label num">{data.pillars_label}</h2>
+          <ul class="pillars">
+            {data.pillars.map((p) => (
+              <li>
+                <h3>{p.title}</h3>
+                <p>{p.text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    data.image && (
+      <section class="section">
+        <figure class="container figure">
+          <Image
+            src={data.image.src}
+            alt={data.image.alt}
+            widths={[720, 1152, 1600, 1920]}
+            sizes="(min-width: 78rem) 72rem, 92vw"
+            loading="lazy"
+            decoding="async"
+          />
+          {data.image.caption && <figcaption class="caption">{data.image.caption}</figcaption>}
+        </figure>
+      </section>
+    )
+  }
+
+  {
+    updates.length > 0 && (
+      <section class="section">
+        <div class="container grid">
+          <h2 class="label num">Updates</h2>
+          <div>
+            <ul class="updates">
+              {updates.map((u) => (
+                <li>
+                  <time datetime={isoDate(u.data.date)}>{formatDate(u.data.date)}</time>
+                  <a href={updateHref(u)}>{u.data.title}</a>
+                </li>
+              ))}
+            </ul>
+            <a class="more" href="/updates/">
+              All updates <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    data.contact && (
+      <section class="section" id="contact">
+        <div class="container grid">
+          <h2 class="label num">Contact</h2>
+          <div>
+            <h3 class="title">{data.contact.heading}</h3>
+            {data.contact.text && <p class="lede">{data.contact.text}</p>}
+            <a class="contact-email" href={`mailto:${site.email}`}>{site.email}</a>
+          </div>
+        </div>
+      </section>
+    )
+  }
 </Base>

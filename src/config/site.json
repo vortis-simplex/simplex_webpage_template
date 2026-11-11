@@ -1,0 +1,17 @@
+{
+  "name": "Simplex",
+  "legal_name": "Simplex",
+  "url": "https://simplexsim.com",
+  "title": "Simplex — The physics engine for Physical AI",
+  "description": "Simplex builds large-scale, physically accurate, real-time simulation for training and evaluating physical AI.",
+  "email": "contact@simplexsim.com",
+  "og_image": "/og.png",
+  "nav": [
+    { "label": "Updates", "href": "/updates/" },
+    { "label": "Contact", "href": "/#contact" }
+  ],
+  "footer_links": [
+    { "label": "Privacy", "href": "/privacy/" }
+  ],
+  "social": []
+}

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Simplex — link preview image template (1200×630)</title>
+    <!--
+      Source for public/og.png. Open in Chrome, set the viewport to 1200×630
+      in DevTools (device toolbar), capture a screenshot, save over public/og.png.
+    -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&display=swap"
+    />
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+      body {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #f5f4ef;
+        color: #151513;
+        font-family: "Instrument Sans", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .brand {
+        position: absolute;
+        left: 72px;
+        top: 64px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand svg {
+        width: 30px;
+        height: 30px;
+      }
+      .wordmark {
+        font-size: 30px;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+      .x {
+        color: #0fa392;
+      }
+      h1 {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        bottom: 140px;
+        margin: 0;
+        font-family: "Instrument Serif", Georgia, serif;
+        font-weight: 400;
+        font-size: 96px;
+        line-height: 1;
+        letter-spacing: -0.015em;
+      }
+      .rule {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        bottom: 112px;
+        height: 1px;
+        background: #d8d6ce;
+      }
+      .url {
+        position: absolute;
+        left: 72px;
+        bottom: 64px;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #6e6d67;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+        <path d="M12 2.8 21.4 20H2.6Z" />
+        <path d="M12 2.8v10.4M2.6 20l9.4-6.8M21.4 20 12 13.2" />
+        <circle cx="12" cy="13.2" r="2.1" fill="#0fa392" stroke="none" />
+      </svg>
+      <span class="wordmark">simple<span class="x">x</span></span>
+    </div>
+    <h1>The physics engine<br />for <em>Physical AI.</em></h1>
+    <div class="rule"></div>
+    <div class="url">simplexsim.com</div>
+  </body>
+</html>
